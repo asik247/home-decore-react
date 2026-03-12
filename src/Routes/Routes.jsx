@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Products from "../Pages/Products";
 import WhisList from "../Pages/WhisList";
 import ErrorPage from "../Pages/ErrorPage";
+import Details from "../Pages/Details";
 
  const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ import ErrorPage from "../Pages/ErrorPage";
             {path:'products',Component:Products},
             {path:'whistList',Component:WhisList},
             // {path:'*',element:<h1>404 page not found</h1>}
+            {
+                path:'/details/:id',
+                Component:Details
+            }
         ]
     }
 ])
