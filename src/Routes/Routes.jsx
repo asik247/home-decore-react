@@ -11,7 +11,9 @@ import ErrorPage from "../Pages/ErrorPage";
         errorElement:<ErrorPage></ErrorPage>,
         Component:Root,
         children:[
-            {index:true,Component:Home},
+            {index:true,
+            loader:()=>fetch('/furnitureData.json'),    
+            Component:Home},
             {path:'products',Component:Products},
             {path:'whistList',Component:WhisList},
             // {path:'*',element:<h1>404 page not found</h1>}
