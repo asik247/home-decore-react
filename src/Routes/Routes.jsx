@@ -11,7 +11,8 @@ import WhisList from "../Pages/WhisList";
         children:[
             {index:true,Component:Home},
             {path:'products',Component:Products},
-            {path:'whistList',Component:WhisList}
+            {path:'whistList',Component:WhisList},
+            {path:'*',element:<h1>404 page not found</h1>}
         ]
     }
 ])
