@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLoaderData } from 'react-router';
+import { Link, NavLink, useLoaderData } from 'react-router';
 
 const Home = () => {
     const allFurniture = useLoaderData();
@@ -29,6 +29,12 @@ const Home = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className='flex justify-center items-center mt-10'>
+                <NavLink to={'/products'}>
+                    <button className='btn btn-primary '>Show All Products</button>
+                </NavLink>
             </div>
         </div>
     );

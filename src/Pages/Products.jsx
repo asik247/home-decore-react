@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Product from './product';
 
 const Products = () => {
+    const [products,setProducts] = useState([])
+    useEffect  (()=>{
+       const loadData =async ()=>{
+            const res =await fetch("/furnitureData.json");
+            const data = await res.json()
+            console.log(data);
+            setProducts(data)
+       }
+       loadData()
+    },[])
     return (
         <div>
-            <h1>Products pages here ;</h1>
+          {
+            // console.log(products)
+            products.map(product=><Product product={product}></Product>)
+          }
         </div>
     );
 };
