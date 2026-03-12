@@ -6,7 +6,7 @@ const ErrorPage = () => {
 
   return (
     <div className="text-center mt-24">
-      <h1 className="text-6xl font-bold text-red-500">Oops!</h1>
+      <h1 className="text-6xl font-bold text-red-500">404</h1>
 
       {/* <p className="text-xl mt-4">Something went wrong</p> */}
 
