@@ -1,9 +1,16 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
+import { Outlet } from 'react-router';
+import Footer from '../Components/Footer';
 
 const Root = () => {
     return (
-        <div>
-            <h1>Hello Roots</h1>
+        <div className='flex flex-col'>
+            <Navbar></Navbar>
+            <div className='flex-1' >
+                <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
