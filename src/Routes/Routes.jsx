@@ -16,7 +16,9 @@ import Details from "../Pages/Details";
             loader:()=>fetch('/furnitureData.json'),    
             Component:Home},
             {path:'products',Component:Products},
-            {path:'whistList',Component:WhisList},
+            {path:'whistList',
+             loader:()=>fetch('/furnitureData.json'), 
+            Component:WhisList},
             // {path:'*',element:<h1>404 page not found</h1>}
             {
                 path:'/details/:id',
