@@ -8,6 +8,7 @@ const WhisList = () => {
 
     useEffect(() => {
         const storedData = getDB();
+        console.log(storedData);
         const singleFurniture = allFurniture.filter(f => storedData.includes(f.id));
         setFurniture(singleFurniture);
     }, []);

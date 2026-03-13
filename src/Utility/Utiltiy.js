@@ -30,7 +30,7 @@ const addDB = (id)=>{
 // RemoveDB
 const removeDB = (id)=>{
     const storedDB = getDB();
-    const reminingDB = storedDB.filter(itme=>itme.id !==id);
+    const reminingDB = storedDB.filter(itme=>itme!==id);
     saveDB(reminingDB)
 }
 
