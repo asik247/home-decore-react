@@ -8,7 +8,7 @@ const Products = () => {
         const loadData = async () => {
             const res = await fetch("/furnitureData.json");
             const data = await res.json()
-            console.log(data);
+            // console.log(data);
             setProducts(data)
         }
         loadData()
