@@ -5,6 +5,11 @@ const Details = () => {
     const matchData = useLoaderData();
     // console.log(matchData);
 
+    // handler code start here;
+    const handleReciveId = (id)=>{
+        console.log(id);
+    }
+
     return (
         <div className="max-w-5xl mx-auto p-6">
             <div className="grid md:grid-cols-2 gap-8 bg-white shadow-lg rounded-xl p-6">
@@ -48,11 +53,11 @@ const Details = () => {
                         </p>
                     </div>
 
-                    <NavLink to={'/whistList'}>
-                        <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                  
+                        <button onClick={()=>handleReciveId(matchData.id)} className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
                             Add To WishList
                         </button>
-                    </NavLink>
+                
                 </div>
 
             </div>
