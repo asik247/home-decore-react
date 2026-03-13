@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLoaderData } from 'react-router';
+import { addDB } from '../Utility/Utiltiy';
 
 const Details = () => {
     const matchData = useLoaderData();
@@ -7,7 +8,7 @@ const Details = () => {
 
     // handler code start here;
     const handleReciveId = (id)=>{
-        console.log(id);
+        addDB(id);
     }
 
     return (

@@ -8,3 +8,23 @@ const getDB = ()=>{
         return []
     }
 }
+
+
+// SavDB
+const saveDB = (items)=>{
+    const saveDB = JSON.stringify(items);
+    localStorage.setItem('item',saveDB)
+}
+
+// AddDB
+const addDB = (id)=>{
+    const storedDatas = getDB();
+    if(storedDatas.includes(id)){
+        alert("This Furtunicer already exist")
+    }else{
+        storedDatas.push(id)
+    }
+    saveDB(storedDatas)
+}
+
+export {addDB,getDB,}
