@@ -14,16 +14,24 @@ const WhisList = () => {
     }, []);
 
 
-     const handleRemove =(id)=>{
-            console.log(id);
-            const furnutureRemove = furniture.filter(itme=>itme.id !== id);
-            setFurniture(furnutureRemove)
-            removeDB(id)
+    const handleRemove = (id) => {
+        console.log(id);
+        const furnutureRemove = furniture.filter(itme => itme.id !== id);
+        setFurniture(furnutureRemove)
+        removeDB(id)
     }
 
     return (
         <div className="max-w-6xl mx-auto p-6">
             <h1 className="text-3xl font-bold text-center mb-8">My Wishlist</h1>
+
+            <details className="dropdown">
+                <summary className="btn m-1">Sorted By</summary>
+                <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                    <li><a>Price High</a></li>
+                    <li><a>Price Low</a></li>
+                </ul>
+            </details>
 
             {furniture.length === 0 ? (
                 <p className="text-center text-gray-500 text-lg">No items in your wishlist.</p>
@@ -49,7 +57,7 @@ const WhisList = () => {
 
                             {/* Remove Button */}
                             <div className="mt-2 sm:mt-0">
-                                <button onClick={()=>handleRemove(f.id)} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors duration-200">
+                                <button onClick={() => handleRemove(f.id)} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors duration-200">
                                     Remove
                                 </button>
                             </div>
