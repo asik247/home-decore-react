@@ -6,8 +6,9 @@ const Product = ({products}) => {
     const [sarchValue,setSearchValue] = useState('');
     const handler = (e)=>{
         const searchV = e.target.value;
-        console.log(searchV);
-        setSearchValue(searchV)
+        const searchVTrim = searchV.trim().toLocaleLowerCase()
+        console.log(searchVTrim);
+        setSearchValue(searchVTrim)
     }
     return (
         <div>
