@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
-import { getDB } from '../Utility/Utiltiy';
+import { getDB, removeDB } from '../Utility/Utiltiy';
 
 const WhisList = () => {
     const allFurniture = useLoaderData();
@@ -15,6 +15,9 @@ const WhisList = () => {
 
      const handleRemove =(id)=>{
             console.log(id);
+            const furnutureRemove = furniture.filter(itme=>itme.id !== id);
+            setFurniture(furnutureRemove)
+            removeDB(id)
     }
 
     return (

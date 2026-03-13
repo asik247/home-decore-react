@@ -27,4 +27,12 @@ const addDB = (id)=>{
     saveDB(storedDatas)
 }
 
-export {addDB,getDB,}
+// RemoveDB
+const removeDB = (id)=>{
+    const storedDB = getDB();
+    const reminingDB = storedDB.filter(itme=>itme.id !==id);
+    saveDB(reminingDB)
+}
+
+
+export {addDB,getDB,removeDB}
