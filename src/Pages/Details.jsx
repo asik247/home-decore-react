@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { NavLink, useLoaderData } from 'react-router';
 
 const Details = () => {
     const matchData = useLoaderData();
@@ -48,9 +48,11 @@ const Details = () => {
                         </p>
                     </div>
 
-                    <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-                        Add To WishList
-                    </button>
+                    <NavLink to={'/whistList'}>
+                        <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                            Add To WishList
+                        </button>
+                    </NavLink>
                 </div>
 
             </div>
