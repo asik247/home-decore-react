@@ -23,7 +23,7 @@ import Details from "../Pages/Details";
                 loader:async ({params})=>{
                     const res = await fetch('/furnitureData.json')
                     const data = await res.json()
-                    console.log(data);
+                    // console.log(data);
                     const singleData = data.find(single=>single.id===parseInt(params.id))
                     // console.log(singleData);
                     return singleData

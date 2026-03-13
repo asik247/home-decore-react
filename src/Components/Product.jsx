@@ -9,7 +9,7 @@ const Product = ({ products }) => {
     // console.log(trims);
 
     const searchValues = trims ? products.filter(product => product.name.toLocaleLowerCase().includes(trims)) : products
-    console.log(searchValues);
+    // console.log(searchValues);
 
 
     return (

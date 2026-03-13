@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router';
 
 const Details = () => {
     const matchData = useLoaderData();
-    console.log(matchData);
+    // console.log(matchData);
 
     return (
         <div className="max-w-5xl mx-auto p-6">
@@ -49,7 +49,7 @@ const Details = () => {
                     </div>
 
                     <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-                        Add To Cart
+                        Add To WishList
                     </button>
                 </div>
 
