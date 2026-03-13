@@ -5,6 +5,7 @@ import { getDB, removeDB } from '../Utility/Utiltiy';
 const WhisList = () => {
     const allFurniture = useLoaderData();
     const [furniture, setFurniture] = useState([]);
+    const [sorType, setSorType] = useState("")
 
     useEffect(() => {
         const storedData = getDB();
@@ -21,15 +22,31 @@ const WhisList = () => {
         removeDB(id)
     }
 
+    // sorted code here;
+    const handleHigh = () => {
+        const sortedData = [...furniture].sort((a, b) => b.price - a.price)
+        setFurniture(sortedData)
+        setSorType("price high")
+    }
+    const handleLow = () => {
+        const sortedData = [...furniture].sort((a, b) => a.price - b.price)
+        setFurniture(sortedData)
+        setSorType("price Low")
+
+    }
+
+
     return (
         <div className="max-w-6xl mx-auto p-6">
-            <h1 className="text-3xl font-bold text-center mb-8">My Wishlist</h1>
+            <h1 className="text-3xl font-bold text-center mb-8">My Wishlist {furniture.length}</h1>
 
             <details className="dropdown">
-                <summary className="btn m-1">Sorted By</summary>
+                <summary className="btn m-1">
+                    Sort By {sorType && `: ${sorType}`}
+                </summary>
                 <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a>Price High</a></li>
-                    <li><a>Price Low</a></li>
+                    <li><a onClick={handleHigh}>Price High</a></li>
+                    <li><a onClick={handleLow}>Price Low</a></li>
                 </ul>
             </details>
 
