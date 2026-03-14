@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { getDB, removeDB } from '../Utility/Utiltiy';
+import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts';
 
 const WhisList = () => {
     const allFurniture = useLoaderData();
     const [furniture, setFurniture] = useState([]);
     const [sorType, setSorType] = useState("")
 
+
+
+
+    // chart data; 
+    const chartData = furniture.map(singF => {
+        const { name, price } = singF;
+        return { name, price }
+    })
+
+
+
     useEffect(() => {
         const storedData = getDB();
-        console.log(storedData);
+        // console.log(storedData);
         const singleFurniture = allFurniture.filter(f => storedData.includes(f.id));
         setFurniture(singleFurniture);
     }, []);
@@ -82,6 +94,35 @@ const WhisList = () => {
                     ))}
                 </div>
             )}
+
+
+            {/* re chart showing code start here; */}
+            <div className="mt-10 flex justify-center items-center">
+                
+
+                <BarChart width={600} height={300} data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="price" fill="#8884d8" />
+                </BarChart>
+            </div>
+            {/* 
+            {
+    "id": 16,
+    "name": "Marble Top Table",
+    "category": "Furniture",
+    "price": 270,
+    "material": "Marble, Iron Base",
+    "dimensions": "24 x 24 x 20 in",
+    "stock": true,
+    "image": "https://i.ibb.co.com/hxYFvcLt/Marble-Top-Table.jpg",
+    "description": "Elegant side table with a white marble top and gold base."
+}
+          */}
+
+
         </div>
     );
 };
